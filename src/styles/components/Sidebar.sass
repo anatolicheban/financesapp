@@ -1,0 +1,25 @@
+@import '../vars'
+
+.sidebar
+  background-color: $gray
+  padding: .5rem
+  border-radius: 1rem
+  max-width: 15rem
+  width: 100%
+  nav
+    display: flex
+    flex-direction: column
+    gap: .5rem
+  &__link
+    display: block
+    background-color: $dark-gray
+    border-radius: .5rem
+    padding: 1rem
+    text-decoration: none
+    color: #fff
+    display: flex
+    align-items: center
+    gap: 0.5rem
+    line-height: 1
+    &.active
+      background-color: $red

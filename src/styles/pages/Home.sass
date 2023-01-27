@@ -1,0 +1,110 @@
+@import '../vars'
+
+.home
+  @include page
+  &__header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background-color: $dark-gray
+    padding: .75rem 1.5rem
+    border-radius: .5rem
+  &__btns
+    display: flex
+    align-items: center
+    gap: 1rem
+    button
+      background-color: transparent
+      color: #fff
+      border: none
+      padding: 0
+      &.active
+        color: $red
+  &__accounts
+    position: relative
+    width: 100%
+    max-width: 12rem
+    button
+      display: flex
+      align-items: center
+      justify-content: space-between
+      background-color: $light-gray
+      width: 100%
+      text-align: left
+      padding: 0.5rem
+      border: none
+      border-radius: .25rem
+      &.open
+        .arrow
+          rotate: -90deg
+      & .arrow
+        transition: .3s rotate
+      &:hover
+        background-color: $red
+        color: #fff
+  &__accounts-list
+    border-radius: .5rem
+    overflow: hidden
+    width: 100%
+    border-radius: .25rem
+    position: absolute
+    top: calc(100% + .75rem)
+    background-color: $light-gray
+  &__accounts-item
+    button
+      border-radius: 0
+      &:hover
+        color: #000
+      &.current
+        background-color: $red
+        color: #fff
+    button:not(.current):hover
+      background-color: rgba($gray, .3)
+  &__diagram
+    display: flex
+    align-items: center
+    flex-direction: column
+    margin-top: 1rem
+  &__diagram-title
+    color: #fff
+    font-weight: 500
+  &__diagram-body
+    max-width: 40rem
+    width: 100%
+  &__stats
+    padding-top: 1rem
+    margin-top: 1rem
+    border-top: 1px solid #fff
+  &__stats-list
+    display: flex
+    flex-direction: column
+    gap: .5rem
+  &__stats-item
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background-color: $dark-gray
+    color: #fff
+    border-radius: .5rem
+    padding: .75rem
+    &:hover
+      background-color: rgba($dark-gray, .7)
+      .home__stats-item-btn
+        visibility: inherit
+  // &__stats-item-title
+  &__stats-item-category
+    margin-left: .25rem
+    color: $gray
+    font-size: 0.75rem
+  // &__stats-item-btns 
+  &__stats-item-btn
+    padding: 0
+    background-color: transparent
+    border: none
+    visibility: hidden
+    margin: 0
+    &.edit
+      color: $yellow
+      margin-right: .5rem
+    &.delete
+      color: $red
