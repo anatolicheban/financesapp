@@ -6,25 +6,16 @@
   align-items: center
   flex-direction: column
   &__title
-    margin-top: 1rem
-    color: #fff
+    @include title
   &__form
-    margin-top: 2rem
-    padding: 1rem
+    margin: 1rem 0 2rem
+    padding: 1.25rem 1rem 1.5rem 1rem
     display: flex
     align-items: stretch
     gap: 1rem
     background-color: $dark-gray
     border-radius: .5rem
-    input
-      font-size: 1.2rem
-      padding: 0.25rem
-      border-radius: .25rem
-      border: 1px solid $light-gray
-      background-color: $dark-gray
-      caret-color: #fff
-      &:focus
-        outline: none
+    position: relative
     button
       padding: 0 1rem
       font-weight: 600
@@ -32,3 +23,58 @@
       background-color: $red
       border-radius: .25rem
       border: none
+  &__dropdown
+    position: relative
+    button
+      width: 10rem
+      display: flex
+      align-items: center
+      justify-content: space-between
+      background-color: $light-gray
+      text-align: left
+      padding: 0.65rem
+      border: none
+      border-radius: .25rem
+      &:hover
+        background-color: $red
+        color: #fff
+    ul
+      border: 1px solid $gray
+      width: 10rem
+      position: absolute
+      top: calc(100% + .5rem)
+      border-radius: .5rem
+      overflow: hidden
+      width: 100%
+      border-radius: .25rem
+      position: absolute
+      top: calc(100% + .75rem)
+      background-color: $light-gray
+    li
+      padding: 0.35rem
+      cursor: pointer
+      &:not(.active):hover
+        background-color: rgba($gray, .3)
+        color: #fff
+      &.active
+        background-color: $red
+        color: #fff
+  &__lists
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    width: 100%
+    // max-width: 30rem
+    justify-content: center
+    gap: 1rem
+  &__expences, &__income
+    display: flex
+    flex-direction: column
+    align-items: center
+    h2
+      color: $light-gray
+    ul
+      margin-top: 1rem
+      display: flex
+      justify-content: center
+      gap: 0.5rem
+      flex-wrap: wrap

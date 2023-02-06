@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import React, { useState, useEffect, useRef } from "react";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
-import { accounts, homeChartData, homeChartOptions, homeInfoBtns, stats } from "../data/dummy";
-import { HomeInfo } from "../models/models";
+import { accounts, homeChartData, homeChartOptions, toggleInfoBtns, stats } from "../data/dummy";
+import { InfoType, ToggleInfoBtn } from "../models/models";
 import { IoIosArrowBack } from "react-icons/io";
 import {
   Chart as ChartJS,
@@ -17,7 +17,7 @@ import { Bar } from "react-chartjs-2";
 import "../styles/pages/Home.sass";
 
 const Home = () => {
-  const [currentInfo, setCurrentInfo] = useState<HomeInfo>("Expences");
+  const [currentInfo, setCurrentInfo] = useState<InfoType>("Expences");
   const [account, setAccount] = useState(accounts[0].name);
   const [isAccountsOpen, setIsAccountsOpen] = useState(false);
   const accountsBtnRef = useRef<HTMLButtonElement>(null);
@@ -36,7 +36,7 @@ const Home = () => {
     };
   }, []);
 
-  const infoBtnHandler = (value: HomeInfo) => {
+  const infoBtnHandler = (value: InfoType) => {
     if (currentInfo !== value) {
       setCurrentInfo(value);
     }
@@ -55,31 +55,8 @@ const Home = () => {
   return (
     <div className="home">
       <header className="home__header">
-        <div className="home__accounts">
-          <button
-            onClick={accountBtnHandler}
-            className={clsx(isAccountsOpen ? "open" : "")}
-            ref={accountsBtnRef}
-          >
-            {account} <IoIosArrowBack className="arrow" />
-          </button>
-          {isAccountsOpen && (
-            <ul className="home__accounts-list">
-              {accounts.map(({ id, name, total }) => (
-                <li className="home__accounts-item" key={id}>
-                  <button
-                    className={clsx(account === name ? "current" : null)}
-                    onClick={() => setAccountBtnHandler(name)}
-                  >
-                    {`${name + " - " + total}`}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
         <div className="home__btns">
-          {homeInfoBtns.map(({ value, id }) => (
+          {toggleInfoBtns.map(({ value, id }) => (
             <button
               onClick={() => infoBtnHandler(value)}
               className={clsx(value === currentInfo ? "active" : "")}

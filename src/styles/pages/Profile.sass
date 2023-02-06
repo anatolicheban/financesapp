@@ -1,0 +1,47 @@
+@import '../vars'
+
+.profile
+  @include page
+  display: flex
+  align-items: center
+  flex-direction: column
+  &__title
+    @include title
+  &__image
+    svg
+      height: 15rem
+      width: 15rem
+      color: $light-gray
+  &__name
+    font-size: 1.5rem
+    color: $light-gray
+  &__registration-date
+    margin-top: .5rem
+    color: $light-gray
+    span
+      color: $red
+  &__info
+    padding: 0.75rem
+    background-color: $dark-gray
+    border-radius: .5rem
+    margin-top: 2rem
+    p + p
+      margin-top: .5rem
+    p
+      display: flex
+      justify-content: space-between
+      align-items: center
+      gap: 5rem
+      color: $light-gray
+      font-weight: 300
+      span
+        color: $red
+        font-size: 1.25rem
+        font-weight: 600
+    button
+      display: block
+      margin: .5rem auto 0
+      background-color: transparent
+      color: $red
+      cursor: pointer
+      border: none

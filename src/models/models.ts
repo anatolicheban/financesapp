@@ -8,11 +8,11 @@ export type SidebarLink = {
   Icon: IconType;
 };
 
-export type HomeInfo = "Expences" | "Income";
+export type InfoType = "Expences" | "Income";
 
-export type HomeInfoBtn = {
+export type ToggleInfoBtn = {
   id: number;
-  value: HomeInfo;
+  value: InfoType;
 };
 
 export type Account = {
@@ -26,4 +26,24 @@ export type StatsItem = {
   category: string;
   title: string;
   price: string;
+};
+
+export type CategoryItemType = {
+  id: number;
+  title: string;
+};
+
+export type ExchangerOption = {
+  id: number;
+  value: Currency;
+  title: string;
+};
+
+export type Currency = "usd" | "uah" | "eur";
+
+export type KeyboardValue = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "0";
+
+export type CateegoriesTypeItem = {
+  id: number;
+  value: InfoType;
 };

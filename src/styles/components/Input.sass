@@ -1,0 +1,52 @@
+@import '../vars.sass'
+
+.input__box
+  // max-width: 20rem
+  width: 100%
+  position: relative
+  display: flex
+  align-items: center
+  gap: 1rem
+  p
+    position: absolute
+    top: calc(100% + .25rem)
+    left: .5rem
+    font-size: .75rem
+    line-height: .9rem
+    color: #7E7E7E
+  label
+    color: $light-gray
+    position: absolute
+    left: 1rem
+    top: 50%
+    transform: translate(0, -50%)
+    transition: .25s all
+    cursor: text
+  input
+    font-size: 1.2rem
+    color: $light-gray
+    // max-width: 18rem
+    // width: 100%
+    border-radius: .25rem
+    border: 1px solid $gray
+    outline: none
+    padding: 0.5rem
+    border-radius: .25rem
+    background-color: $dark-gray
+    caret-color: #fff
+    &:focus
+      outline: none
+    &.error
+      border: 1px solid $red
+      & ~ label, & ~ p
+        color: $red
+.input__box input:focus ~ label,
+.input__box input:not(:placeholder-shown) ~ label
+  top: 0
+  left: .5rem
+  background-color: $dark-gray
+  border-right: 1px solid $gray
+  border-left: 1px solid $gray
+  font-size: 0.75rem
+  cursor: default
+  padding: 0 .5rem

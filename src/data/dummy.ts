@@ -1,9 +1,21 @@
-import { Account, HomeInfo, HomeInfoBtn, SidebarLink, StatsItem } from "../models/models";
-import { AiOutlineHome, AiOutlineMoneyCollect, AiOutlineCodeSandbox } from "react-icons/ai";
+import {
+  Account,
+  CateegoriesTypeItem,
+  CategoryItemType,
+  ExchangerOption,
+  ToggleInfoBtn,
+  KeyboardValue,
+  SidebarLink,
+  StatsItem,
+} from "../models/models";
+import { AiOutlineHome } from "react-icons/ai";
 import { ChartOptions } from "chart.js/dist/types/index";
 import { BiCategoryAlt } from "react-icons/bi";
 import { BsCurrencyExchange } from "react-icons/bs";
+import { IoAddCircleOutline } from "react-icons/io5";
+import { IoMdSettings } from "react-icons/io";
 import { ChartData } from "chart.js";
+import { RiAccountCircleFill } from "react-icons/ri";
 export const sidebarLinks: SidebarLink[] = [
   {
     id: 1,
@@ -19,13 +31,31 @@ export const sidebarLinks: SidebarLink[] = [
   },
   {
     id: 3,
-    path: "/exchanger",
+    path: "/exchange",
     title: "Exchanger",
     Icon: BsCurrencyExchange,
   },
+  {
+    id: 4,
+    title: "Add",
+    path: "/add",
+    Icon: IoAddCircleOutline,
+  },
+  {
+    id: 5,
+    title: "My profile",
+    path: "/profile",
+    Icon: RiAccountCircleFill,
+  },
+  {
+    id: 6,
+    title: "Settings",
+    path: "/settings",
+    Icon: IoMdSettings,
+  },
 ];
 
-export const homeInfoBtns: HomeInfoBtn[] = [
+export const toggleInfoBtns: ToggleInfoBtn[] = [
   {
     id: 1,
     value: "Expences",
@@ -113,3 +143,96 @@ export const homeChartData: ChartData<"bar", number[], string> = {
     },
   ],
 };
+
+export const categoriesList: CategoryItemType[] = [
+  {
+    id: 1,
+    title: "Clothes",
+  },
+  {
+    id: 2,
+    title: "Cars",
+  },
+  {
+    id: 3,
+    title: "Dishes",
+  },
+  {
+    id: 4,
+    title: "Clothes",
+  },
+  {
+    id: 5,
+    title: "Toys",
+  },
+  {
+    id: 6,
+    title: "BlaBla",
+  },
+  {
+    id: 7,
+    title: "TerePere",
+  },
+  {
+    id: 8,
+    title: "EbuCheEto",
+  },
+];
+
+export const exchangerOptions: ExchangerOption[] = [
+  {
+    id: 1,
+    value: "usd",
+    title: "US Dollar",
+  },
+  {
+    id: 2,
+    value: "eur",
+    title: "European Euro",
+  },
+  {
+    id: 3,
+    value: "uah",
+    title: "Ukrainian Hryvnia",
+  },
+];
+
+export const keyboard: KeyboardValue[] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+
+export const categoriesTypes: CateegoriesTypeItem[] = [
+  {
+    id: 1,
+    value: "Expences",
+  },
+  {
+    id: 2,
+    value: "Income",
+  },
+];
+
+export const categories: CategoryItemType[] = [
+  {
+    id: 1,
+    title: "test 1",
+  },
+  {
+    id: 2,
+    title: "test 2",
+  },
+  {
+    id: 3,
+    title: "test 3",
+  },
+  {
+    id: 4,
+    title: "test 4",
+  },
+  {
+    id: 5,
+    title: "test 5",
+  },
+  {
+    id: 6,
+    title: "test 6",
+  },
+];

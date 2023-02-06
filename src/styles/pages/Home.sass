@@ -3,9 +3,6 @@
 .home
   @include page
   &__header
-    display: flex
-    justify-content: space-between
-    align-items: center
     background-color: $dark-gray
     padding: .75rem 1.5rem
     border-radius: .5rem
@@ -20,46 +17,6 @@
       padding: 0
       &.active
         color: $red
-  &__accounts
-    position: relative
-    width: 100%
-    max-width: 12rem
-    button
-      display: flex
-      align-items: center
-      justify-content: space-between
-      background-color: $light-gray
-      width: 100%
-      text-align: left
-      padding: 0.5rem
-      border: none
-      border-radius: .25rem
-      &.open
-        .arrow
-          rotate: -90deg
-      & .arrow
-        transition: .3s rotate
-      &:hover
-        background-color: $red
-        color: #fff
-  &__accounts-list
-    border-radius: .5rem
-    overflow: hidden
-    width: 100%
-    border-radius: .25rem
-    position: absolute
-    top: calc(100% + .75rem)
-    background-color: $light-gray
-  &__accounts-item
-    button
-      border-radius: 0
-      &:hover
-        color: #000
-      &.current
-        background-color: $red
-        color: #fff
-    button:not(.current):hover
-      background-color: rgba($gray, .3)
   &__diagram
     display: flex
     align-items: center
