@@ -1,9 +1,8 @@
 import clsx from "clsx";
 import React, { useState, useEffect, useRef } from "react";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
-import { accounts, homeChartData, homeChartOptions, toggleInfoBtns, stats } from "../data/dummy";
-import { InfoType, ToggleInfoBtn } from "../models/models";
-import { IoIosArrowBack } from "react-icons/io";
+import { accounts, homeChartOptions, toggleInfoBtns, stats, timeSortOptions } from "../data/dummy";
+import { InfoType, TimeSortType } from "../models/models";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -15,26 +14,14 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import "../styles/pages/Home.sass";
+import { returnChartData } from "../utils/returnChartData";
 
 const Home = () => {
+  console.log("Render");
   const [currentInfo, setCurrentInfo] = useState<InfoType>("Expences");
-  const [account, setAccount] = useState(accounts[0].name);
-  const [isAccountsOpen, setIsAccountsOpen] = useState(false);
-  const accountsBtnRef = useRef<HTMLButtonElement>(null);
+  const [timeSort, setTimeSort] = useState<TimeSortType>("Day");
 
   ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
-
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (e.target !== accountsBtnRef.current) {
-        setIsAccountsOpen(false);
-      }
-    };
-    window.addEventListener("click", handler);
-    return () => {
-      window.removeEventListener("click", handler);
-    };
-  }, []);
 
   const infoBtnHandler = (value: InfoType) => {
     if (currentInfo !== value) {
@@ -42,13 +29,9 @@ const Home = () => {
     }
   };
 
-  const accountBtnHandler = () => {
-    setIsAccountsOpen((prev) => !prev);
-  };
-
-  const setAccountBtnHandler = (value: string) => {
-    if (account !== value) {
-      setAccount(value);
+  const timeSortBtnHandler = (value: TimeSortType) => {
+    if (timeSort !== value) {
+      setTimeSort(value);
     }
   };
 
@@ -68,10 +51,21 @@ const Home = () => {
         </div>
       </header>
       <div className="home__diagram">
-        <h2 className="home__diagram-title">{`${account + " " + currentInfo}`}</h2>
+        <h2 className="home__diagram-title">{`${currentInfo}`}</h2>
         <div className="home__diagram-body">
-          <Bar options={homeChartOptions} data={homeChartData} />
+          <Bar options={homeChartOptions} data={returnChartData(currentInfo)} />
         </div>
+      </div>
+      <div className="home__sort">
+        {timeSortOptions.map((item) => (
+          <button
+            className={clsx(timeSort === item ? "active" : "")}
+            onClick={() => timeSortBtnHandler(item)}
+            key={item}
+          >
+            {item}
+          </button>
+        ))}
       </div>
       <div className="home__stats">
         <ul className="home__stats-list">

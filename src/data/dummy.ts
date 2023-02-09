@@ -7,6 +7,7 @@ import {
   KeyboardValue,
   SidebarLink,
   StatsItem,
+  TimeSortType,
 } from "../models/models";
 import { AiOutlineHome } from "react-icons/ai";
 import { ChartOptions } from "chart.js/dist/types/index";
@@ -120,29 +121,28 @@ export const homeChartOptions: ChartOptions = {
   },
 };
 
-export const homeChartData: ChartData<"bar", number[], string> = {
-  labels: [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ],
-  datasets: [
-    {
-      label: "Income",
-      data: [1000, 760, 90, 678, 763, 385, 457, 897, 453, 764, 900, 1100],
-      backgroundColor: "#F26C6C",
-    },
-  ],
-};
+// export const homeChartData: ChartData<"bar", number[], string> = {
+//   labels: [
+//     "January",
+//     "February",
+//     "March",
+//     "April",
+//     "May",
+//     "June",
+//     "July",
+//     "August",
+//     "September",
+//     "October",
+//     "November",
+//     "December",
+//   ],
+//   datasets: [
+//     {
+//       data: [1000, 760, 90, 678, 763, 385, 457, 897, 453, 764, 900, 1100],
+//       backgroundColor: "#F26C6C",
+//     },
+//   ],
+// };
 
 export const categoriesList: CategoryItemType[] = [
   {
@@ -236,3 +236,5 @@ export const categories: CategoryItemType[] = [
     title: "test 6",
   },
 ];
+
+export const timeSortOptions: TimeSortType[] = ["Day", "Month", "Week", "Year"];

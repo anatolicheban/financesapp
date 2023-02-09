@@ -47,3 +47,5 @@ export type CateegoriesTypeItem = {
   id: number;
   value: InfoType;
 };
+
+export type TimeSortType = "Day" | "Week" | "Month" | "Year";

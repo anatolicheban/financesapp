@@ -8,6 +8,7 @@ import { IoBackspaceOutline } from "react-icons/io5";
 import { Currency, KeyboardValue } from "../models/models";
 import { useKeyboard } from "../hooks/useKeyboard";
 import { useGetRatesQuery } from "../features/exchanger/exchangerApiSlice";
+import { formatNum } from "../utils/formatNum";
 
 const Exchange = () => {
   const { currentKey, setCurrentKey } = useKeyboard();
@@ -55,10 +56,10 @@ const Exchange = () => {
   };
 
   useEffect(() => {
-    console.log("!");
     let resultData = data?.result;
     if (resultData) {
-      setResultText((resultData * +baseInput).toString());
+      // setResultText((resultData * +baseInput).toString());
+      setResultText(formatNum(resultData * +baseInput));
     }
     if (!baseInput) {
       setResultText("0");
