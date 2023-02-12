@@ -4,14 +4,14 @@ import type { BaseQueryFn, FetchArgs, FetchBaseQueryError } from "@reduxjs/toolk
 import { RootState } from "../store";
 
 const baseQuery: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError> = fetchBaseQuery({
-  baseUrl: "https://financialmanagmentapi.azurewebsites.net",
-  // credentials: "include",
+  baseUrl: "https://financialmanagmentapi.azurewebsites.net/api",
+  credentials: "include",
   prepareHeaders: (headers, api) => {
-    // const state = api.getState() as RootState;
-    // const token = state.auth.token;
+    //   const state = api.getState() as RootState;
+    //   const token = state.auth.token;
 
-    // if (token) {
-    //   headers.set("authorization", `Bearer ${token}`);
+    //   if (token) {
+    //     headers.set("authorization", `Bearer ${token}`);
     // }
     return headers;
   },

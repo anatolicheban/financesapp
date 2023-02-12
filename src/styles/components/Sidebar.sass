@@ -12,6 +12,7 @@
     gap: .5rem
     height: 100%
   &__link
+    position: relative
     display: block
     background-color: $dark-gray
     border-radius: .5rem
@@ -22,5 +23,18 @@
     align-items: center
     gap: 0.5rem
     line-height: 1
+    overflow: hidden
+    & > svg, & > span
+      z-index: 10
     &.active
       background-color: $red
+      .sidebar__link-bg
+        display: none
+  &__link-bg
+    position: absolute
+    top: -20%
+    right: 0
+    svg
+      z-index: 1
+      font-size: 6rem
+      color: rgba($light-gray, .05)

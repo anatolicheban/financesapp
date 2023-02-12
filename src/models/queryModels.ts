@@ -21,7 +21,7 @@ export interface PostIncomeExpenceReq {
 
 //GET
 // /getitems?page=1
-export interface GetIncomeExpenceResponceItem {
+export interface GetIncomeExpenceResponseItem {
   id: string | number;
   title: string;
   category: string;
@@ -31,3 +31,13 @@ export interface GetIncomeExpenceResponceItem {
 
 //Users
 export interface User {}
+
+//LogIn
+export interface LoginReq {
+  username: string;
+  password: string;
+}
+
+export interface LoginResponse {
+  access_token: string;
+}

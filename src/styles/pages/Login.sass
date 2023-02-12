@@ -1,0 +1,35 @@
+@import '../vars'
+
+.login
+  height: 100vh
+  display: flex
+  align-items: center
+  justify-content: center
+  &__form
+    background-color: $dark-gray
+    padding: 1rem
+    border-radius: .5rem
+    max-width: 25rem
+    width: 100%
+  &__form-title
+    text-align: center
+    margin-bottom: 2rem
+    color: $light-gray
+  &__form-email, &__form-password
+    input
+      width: 100%
+  &__form-password
+    margin-top: 1.5rem
+  &__form-button
+    display: block
+    margin: 1.5rem auto 0
+    padding: .5rem 1.75rem
+    border-radius: .25rem
+    border: none
+    font-weight: 600
+    color: $dark-gray
+    background-color: $light-gray
+    cursor: pointer
+    &:hover
+      color: $white
+      background-color: $red

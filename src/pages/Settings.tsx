@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import ChangePwd from "../components/ChangePwd";
 import ChangeUsername from "../components/ChangeUsername";
 import SwitchBtn from "../components/UI/SwitchBtn";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 import "../styles/pages/Settings.sass";
 
-const Settings = () => {
-  const [isDarkMode, setisDarkMode] = useState(false);
+type SettingsProps = {
+  onChangeMode: (value: boolean) => void;
+  isDarkMode: boolean;
+};
+
+const Settings = ({ onChangeMode, isDarkMode }: SettingsProps) => {
   return (
     <div className="settings">
       <h1 className="settings__title">Settings</h1>
@@ -17,7 +22,7 @@ const Settings = () => {
       </div>
       <div className="settings__color-mode">
         <span>Color mode:</span>
-        <SwitchBtn checked={isDarkMode} onChange={(value) => setisDarkMode(value)} />
+        <SwitchBtn checked={isDarkMode} onChange={(value) => onChangeMode(value)} />
       </div>
     </div>
   );

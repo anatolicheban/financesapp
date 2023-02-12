@@ -12,8 +12,11 @@ const Sidebar = () => {
         <nav>
           {sidebarLinks.map(({ id, Icon, path, title }) => (
             <NavLink className={"sidebar__link"} to={path} key={id}>
+              <span className="sidebar__link-bg">
+                <Icon />
+              </span>
               <Icon />
-              {title}
+              <span>{title}</span>
             </NavLink>
           ))}
         </nav>

@@ -1,0 +1,126 @@
+@import './vars'
+
+body.light
+  #root
+    // background-color: $white
+    background: linear-gradient(111.32deg, #FFFFFF -7.36%, rgba(255, 255, 255, 0.67) -7.35%, rgba(202, 202, 202, 0.63) 94.12%)
+  .wrapper
+    background-color: $light-theme-2
+    -webkit-box-shadow: 5px 3px 39px -20px rgba(0,0,0,0.75)
+    -moz-box-shadow: 5px 3px 39px -20px rgba(0,0,0,0.75)
+    box-shadow: 5px 3px 39px -20px rgba(0,0,0,0.75)
+  //All Pages
+  .home, .categories, .exchange, .add, .profile, .settings
+    background-color: $light-theme-1
+    &__title
+      color: $gray
+  //HOME PAGE
+  .home
+    &__header
+      background-color: $light-theme-2
+    &__btns button:not(.active)
+      color: $gray
+    &__diagram-title
+      color: $dark-gray
+    &__sort button:not(.active)
+      color: $dark-gray
+    &__stats
+      border-color: $light-gray
+    &__stats-item
+      background-color: $light-theme-3
+      &:hover
+        background-color: $light-theme-4
+    &__stats-item-category
+      color: $gray
+    &__stats-item-title
+      color: $dark-gray
+  //CATEGORIES
+  .categories
+    &__form
+      background-color: $light-theme-3
+    &__dropdown
+      button:not(:hover)
+        background-color: $light-theme-4
+        color: $gray
+      ul
+        background-color: $light-theme-4
+        border: none
+    &__expences, &__income
+      h2
+        color: $gray
+  //EXCHANGER
+  .exchange
+    &__result, &__form, &__options
+      color: $gray
+      background-color: $light-theme-3
+    &__reverse:not(:hover)
+      color: $gray
+    &__options-base, &__options-result
+      button:not(:hover)
+        background-color: $light-theme-4
+        color: $gray
+      ul
+        background-color: $light-theme-4
+        border: none
+    &__keyboard
+      background-color: $light-theme-3
+      button:not(:hover)
+        background-color: $light-theme-2
+  //ADD PAGE
+  .add
+    &__form
+      background-color: $light-theme-3
+    &__form-toggle button:not(.active)
+      color: $gray
+    &__categories h3
+      color: $gray
+      button:not(:hover)
+        background-color: $light-theme-4
+        color: $gray
+      ul
+        background-color: $light-theme-4
+        border: none
+  //PROFILE
+  .profile
+    &__image svg
+      color: $light-theme-3
+    &__name
+      color: $gray
+    &__registration-date
+      color: $gray
+    &__info
+      background-color: $light-theme-3
+      p
+        color: $gray
+  //NOTFOUND
+  .notfound
+    &__code, &__text, &__message
+      color: $gray
+  //COMPONENTS
+  //SIDEBAR
+  .sidebar
+    background-color: $light-theme-1
+    &__link:not(.active)
+      background-color: $light-theme-3
+      color: $dark-gray
+    &__link-bg svg
+      color: rgba($light-gray, .7)
+  //CATEGORIES-ITEM
+  .categories__item
+    background-color: $light-theme-3
+    color: $gray
+  //CHANGE_PWD, UN
+  .change-pwd, .change-un
+    background-color: $light-theme-3
+    &__title
+      color: $gray
+  //INPUTS
+  .input__box
+    label
+      color: $gray
+      background-color: $light-theme-3
+    input
+      color: $gray
+      background-color: $light-theme-3
+      caret-color: $gray
+      border-color: $gray
